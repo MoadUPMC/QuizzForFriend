@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">QuizzForFriend</string>
+
+    <string name="title_activity_full_sreen_game">Quizz For Friend</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">QUIZZ FOR\nFRIEND</string>
 </resources>
