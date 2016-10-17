@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="choix" />
+    <item name="aeronotiques">Aeronotique</item>
+    <item name="disney">Aeronotique</item>
+    <item name="music">Aeronotique</item>
+    <item name="simpsons">Aeronotique</item>
+</resources>
