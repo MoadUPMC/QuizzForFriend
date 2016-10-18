@@ -1,6 +1,7 @@
 package tp2.tpalt.upmc.quizzforfriend;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     protected QuizzForFriend quizzForFriendApp;
 
     private Button muteSoundBtn;
+    private Button partieSolo;
+    private Button partieVersus;
 
     /**
      * Some older devices needs a small delay between UI widget updates
@@ -60,7 +63,27 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         muteSoundBtn = (Button) findViewById(R.id.muteSound);
+        partieSolo  = (Button)findViewById(R.id.boutonSolo);
+        partieVersus = (Button)findViewById(R.id.boutonVersus);
     }
+
+
+    public void playDirection(View v){
+        startActivity(intentForId(v));
+    }
+
+    private Intent intentForId(View v){
+        if (v.getId() == R.id.boutonSolo){
+            return new Intent(this, ThemeActivity.class);}
+        else {
+            //On passe un theme a l'application au hasard ici
+            return new Intent (this, ThemeActivity.class);
+        }
+    }
+
+
+
+
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
