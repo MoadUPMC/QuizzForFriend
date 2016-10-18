@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         muteSoundBtn = (Button) findViewById(R.id.muteSound);
+        Questionnaire questionnaire = new Questionnaire(getApplicationContext(),R.raw.quiz_aeronotiques);
     }
 
     @Override

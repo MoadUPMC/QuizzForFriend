@@ -27,7 +27,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.android.support:support-v4:24.2.1'
     // https://mvnrepository.com/artifact/org.json/json
-    compile group: 'org.json', name: 'json', version: '20160807'
+    //compile group: 'org.json', name: 'json', version: '20160807'
 
     testCompile 'junit:junit:4.12'
 }

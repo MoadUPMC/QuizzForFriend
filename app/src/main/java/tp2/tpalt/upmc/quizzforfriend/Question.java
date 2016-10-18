@@ -1,8 +1,10 @@
 package tp2.tpalt.upmc.quizzforfriend;
 
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,38 +13,92 @@ public class Question {
     private String question;
 
     private JSONObject questionWithResponsesJson;
-    private JSONObject responsesJson;
+    private JSONArray responsesJsonArray;
 
-    Map<String, String> responses = new HashMap<String, String>();
+    ArrayList<Map<String, String>> responses = new ArrayList<Map<String, String>>();
 
+    private int tentatives;
 
-
-
-
-    public Question(String question, String reponse,
-                    String reponseA, String reponseB, String reponseC, String reponseD){
-        this.question   = question;
-        this.reponse    = reponse;
-        this.reponseA   = reponseA;
-        this.reponseB   = reponseB;
-        this.reponseC   = reponseC;
-        this.reponseD   = reponseD;
+    public Question() {
+        setTentatives(0);
     }
 
-    public boolean bonneReponse(String tentative){
-        if (tentative.equals(this.reponse)) return true;
-        else return false;
+    public Question(String question) {
+        setQuestion(question);
+        setTentatives(0);
     }
 
-    public String getQuestion() {return question;}
+    public Question(JSONObject questionWithResponsesJson) {
+        setQuestionWithResponsesJson(questionWithResponsesJson);
+        setTentatives(0);
+    }
 
-    public String getReponse()  {return reponse;}
+    public Question(String question, JSONArray responsesJsonArray) {
+        this.question = question;
+        this.responsesJsonArray = responsesJsonArray;
+        setTentatives(0);
+    }
 
-    public String getReponseA() {return reponseA;}
+    public Question(String question, ArrayList<Map<String, String>> responses) {
+        this.question = question;
+        this.responses = responses;
+        setTentatives(0);
+    }
 
-    public String getReponseB() {return reponseB;}
+    // GETTERS
 
-    public String getReponseC() {return reponseC;}
+    public JSONObject getQuestionWithResponsesJson() {
+        return questionWithResponsesJson;
+    }
 
-    public String getReponseD() {return reponseD;}
+
+    public JSONArray getResponsesJsonArray() {
+        return responsesJsonArray;
+    }
+
+    public ArrayList<Map<String, String>> getResponses() {
+        return responses;
+    }
+
+
+    public int getTentatives() {
+        return tentatives;
+    }
+
+
+    public String getQuestion() {
+        return question;
+    }
+
+
+    //SETTERS
+
+    private void setTentatives(int tentatives) {
+        this.tentatives = tentatives;
+    }
+
+    public void setQuestion(String question) {
+        this.question = question;
+    }
+
+    public void setResponses(ArrayList<Map<String, String>> responses) {
+        this.responses = responses;
+    }
+
+
+    public void setResponsesJsonArray(JSONArray responsesJsonArray) {
+        this.responsesJsonArray = responsesJsonArray;
+    }
+
+
+    public void setQuestionWithResponsesJson(JSONObject questionWithResponsesJson) {
+        this.questionWithResponsesJson = questionWithResponsesJson;
+    }
+
+
+    public boolean isBonneReponse(String response){
+        //TODO
+        return true;
+    }
+
 }
