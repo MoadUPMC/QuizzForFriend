@@ -1,7 +1,11 @@
 <resources>
-    <string name="app_name">QuizzForFriend</string>
+    <string name="app_name" translatable="false">Quizz For Friend</string>
 
     <string name="title_activity_full_sreen_game">Quizz For Friend</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">QUIZZ FOR\nFRIEND</string>
+    <string name="PARTY_SOLO">PARTIE SOLO</string>
+    <string name="VERSUS_PARTY">JOUER CONTRE UN JOUEUR</string>
+    <string name="MUTE_SOUND">Muet</string>
+    <string name="UNMUTE_SOUND">Son</string>
 </resources>

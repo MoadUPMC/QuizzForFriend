@@ -16,6 +16,8 @@ public class QuizzForFriend extends Application {
 
     private MediaPlayer mediaPlayer;
 
+    private  boolean soundMuted = false;
+
     private List<Partie> parties;
 
     //Ne jamais utiliser le contructeur par default
@@ -46,11 +48,33 @@ public class QuizzForFriend extends Application {
         }
     }
 
+    public boolean isPlaying(){
+        return (this.mediaPlayer != null && this.mediaPlayer.isPlaying());
+    }
 
-    public void audioPlayer(int path){
+
+    public void playRessource(int path){
         if(this.mediaPlayer != null && this.mediaPlayer.isPlaying()) return;
         this.mediaPlayer = MediaPlayer.create(getApplicationContext(), path);
         this.mediaPlayer.start();
         this.mediaPlayer.setLooping(true);
+    }
+
+    public void muteSound(){
+        if(this.mediaPlayer != null && this.mediaPlayer.isPlaying()){
+            this.mediaPlayer.setVolume(0.0f, 0.0f);
+            this.soundMuted = true;
+        }
+    }
+
+    public void unMuteSound(){
+        if(this.mediaPlayer != null && this.mediaPlayer.isPlaying()){
+            this.mediaPlayer.setVolume(1.0f, 1.0f);
+            this.soundMuted = false;
+        }
+    }
+
+    public boolean isSoundMuted() {
+        return soundMuted;
     }
 }

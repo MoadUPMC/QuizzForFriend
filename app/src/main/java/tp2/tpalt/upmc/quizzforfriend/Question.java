@@ -1,18 +1,23 @@
 package tp2.tpalt.upmc.quizzforfriend;
 
-/**
- * Created by macbookpro on 10/10/2016.
- */
+
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Question {
 
-    private String question; //-> La question
-    private String reponseA; // Les
-    private String reponseB; // Reponses
-    private String reponseC; // Possibles
-    private String reponseD; // Dont une, parmis elles, est bonne
+    private String question;
 
-    private String reponse; // La bonne reponse (qui est lq même qu'une de celles ci dessus)
+    private JSONObject questionWithResponsesJson;
+    private JSONObject responsesJson;
+
+    Map<String, String> responses = new HashMap<String, String>();
+
+
+
+
 
     public Question(String question, String reponse,
                     String reponseA, String reponseB, String reponseC, String reponseD){
