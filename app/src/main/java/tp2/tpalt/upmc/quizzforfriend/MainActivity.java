@@ -6,7 +6,6 @@ import android.os.Handler;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -65,22 +64,35 @@ public class MainActivity extends AppCompatActivity {
         muteSoundBtn = (Button) findViewById(R.id.muteSound);
         partieSolo  = (Button)findViewById(R.id.boutonSolo);
         partieVersus = (Button)findViewById(R.id.boutonVersus);
+
+    partieSolo.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent i = new Intent (getApplicationContext(), ThemeActivity.class);
+            startActivity(i);
+        }
+    });
     }
 
-
+/*
     public void playDirection(View v){
-        startActivity(intentForId(v));
+        Intent itnt = intentForId(v);
+        //itnt.
+        startActivity(itnt);
     }
 
     private Intent intentForId(View v){
+        Toast.makeText(quizzForFriendApp, "LOL", Toast.LENGTH_SHORT).show();
+        return new Intent (getApplicationContext(), ThemeActivity.class);
+
         if (v.getId() == R.id.boutonSolo){
-            return new Intent(this, ThemeActivity.class);}
+            return new Intent(getApplicationContext(), ThemeActivity.class);}
         else {
             //On passe un theme a l'application au hasard ici
-            return new Intent (this, ThemeActivity.class);
+            return new Intent (getApplicationContext(), ThemeActivity.class);
         }
     }
-
+*/
 
 
 
