@@ -40,12 +40,12 @@ public class ThemeActivity extends AppCompatActivity {
             // Note that some of these constants are new as of API 16 (Jelly Bean)
             // and API 19 (KitKat). It is safe to use them, as they are inlined
             // at compile-time and do nothing on earlier devices.
-            /*mContentView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE
+            mContentView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE
                     | View.SYSTEM_UI_FLAG_FULLSCREEN
                     | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                     | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
                     | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);*/
+                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
         }
     };
     private final Runnable mHideRunnable = new Runnable() {
@@ -63,6 +63,7 @@ public class ThemeActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.choisir_theme_layout);
+        mContentView = findViewById(R.id.themeChoice);
 
         themeAleatoire = (Button)findViewById(R.id.themeAleatoire);
         themeChoisis   = (Button)findViewById(R.id.themeChoisis);
