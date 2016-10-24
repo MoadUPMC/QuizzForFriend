@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="choix">Aeronotique</string-array>
+    <string-array name="choix">
+    <item name="aeronotiques">Aeronotique</item>
+    <item name="disney">disney</item>
+    <item name="music">music</item>
+    <item name="simpsons">simpsons</item>
+    </string-array>
 </resources>
