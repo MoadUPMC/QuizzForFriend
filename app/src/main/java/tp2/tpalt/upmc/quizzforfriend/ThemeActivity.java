@@ -67,7 +67,6 @@ public class ThemeActivity extends AppCompatActivity {
 
         themeAleatoire = (Button)findViewById(R.id.themeAleatoire);
         themeChoisis   = (Button)findViewById(R.id.themeChoisis);
-
     }
 
     //On redirige en fonction du bouton sur lequel on appuie
