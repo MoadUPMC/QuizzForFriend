@@ -3,10 +3,27 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1"
+    android:background="#31474e"
     android:id="@+id/themeChoice">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right">
+
+
+        <ImageButton
+            android:text="@string/MUTE_SOUND"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/muteSound"
+            android:onClick="toogleSound"
+            android:background="@android:drawable/ic_lock_silent_mode" />
+
+    </RelativeLayout>
+
     <Button
-        android:text="Theme Aleatoire"
+        android:text="@string/theme_aleatoire"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/themeAleatoire"
@@ -15,7 +32,8 @@
         android:layout_weight="0.22" />
 
     <Button
-        android:text="Choisir Theme"
+        android:text="@string/choisir_theme"
+        style="?metaButtonBarButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/activity_horizontal_margin"

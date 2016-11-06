@@ -2,7 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0099cc"
+    android:background="#31474e"
+    android:id="@+id/partyChoice"
     tools:context="tp2.tpalt.upmc.quizzforfriend.MainActivity">
 
 
@@ -14,7 +15,7 @@
         android:keepScreenOn="true"
         android:text="@string/dummy_content"
         android:paddingTop="100dp"
-        android:textColor="#33b5e5"
+        android:textColor="#eae5e5"
         android:textSize="50sp"
         android:textStyle="bold" />
     <RelativeLayout
@@ -23,12 +24,13 @@
         android:gravity="right">
 
 
-        <Button
+        <ImageButton
             android:text="@string/MUTE_SOUND"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/muteSound"
-            android:onClick="toogleSound"/>
+            android:onClick="toogleSound"
+            android:background="@android:drawable/ic_lock_silent_mode" />
 
     </RelativeLayout>
 
@@ -56,7 +58,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="@string/PARTY_SOLO" />
+                android:text="@string/PARTY_SOLO"
+                android:onClick="playSelectPartySound"/>
 
             <Button
                 android:id="@+id/boutonVersus"
@@ -64,7 +67,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="@string/VERSUS_PARTY" />
+                android:text="@string/VERSUS_PARTY"
+                android:onClick="playSelectPartySound"/>
 
         </LinearLayout>
 

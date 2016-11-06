@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 
 /**
@@ -63,14 +64,17 @@ public class ThemeActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.choisir_theme_layout);
+        getSupportActionBar().hide();
         mContentView = findViewById(R.id.themeChoice);
 
         themeAleatoire = (Button)findViewById(R.id.themeAleatoire);
         themeChoisis   = (Button)findViewById(R.id.themeChoisis);
+        QuizzForFriend.playLoadingActivity(getApplicationContext());
     }
 
     //On redirige en fonction du bouton sur lequel on appuie
     public void themeDirection(View v){
+        QuizzForFriend.playSelectPartySound(getApplicationContext());
         startActivity(intentForId(v));
     }
 
@@ -113,5 +117,9 @@ public class ThemeActivity extends AppCompatActivity {
         mHideHandler.removeCallbacks(mHideRunnable);
         mHideHandler.postDelayed(mHideRunnable, delayMillis);
     }
-
+    public void toogleSound(View v){
+        ImageButton muteSoundBtn = (ImageButton) findViewById(R.id.muteSound);
+        QuizzForFriend.toogleThemeSound(muteSoundBtn);
+        QuizzForFriend.playToggleSound(getBaseContext());
+    }
 }

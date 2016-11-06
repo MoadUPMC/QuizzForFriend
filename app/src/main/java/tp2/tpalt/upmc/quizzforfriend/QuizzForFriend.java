@@ -5,6 +5,7 @@ import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.widget.ImageButton;
 
 import java.io.File;
 import java.util.List;
@@ -14,9 +15,9 @@ import java.util.List;
  */
 public class QuizzForFriend extends Application {
 
-    private MediaPlayer mediaPlayer;
+    private static MediaPlayer mediaPlayer;
 
-    private  boolean soundMuted = false;
+    private static boolean soundMuted = false;
 
     private List<Partie> parties;
 
@@ -48,8 +49,8 @@ public class QuizzForFriend extends Application {
         }
     }
 
-    public boolean isPlaying(){
-        return (this.mediaPlayer != null && this.mediaPlayer.isPlaying());
+    public static boolean isPlaying(){
+        return (mediaPlayer != null && mediaPlayer.isPlaying());
     }
 
 
@@ -60,21 +61,68 @@ public class QuizzForFriend extends Application {
         this.mediaPlayer.setLooping(true);
     }
 
-    public void muteSound(){
-        if(this.mediaPlayer != null && this.mediaPlayer.isPlaying()){
-            this.mediaPlayer.setVolume(0.0f, 0.0f);
-            this.soundMuted = true;
+    public static void muteSound(){
+        if(mediaPlayer != null && mediaPlayer.isPlaying()){
+            mediaPlayer.setVolume(0.0f, 0.0f);
+            soundMuted = true;
         }
     }
 
-    public void unMuteSound(){
-        if(this.mediaPlayer != null && this.mediaPlayer.isPlaying()){
-            this.mediaPlayer.setVolume(1.0f, 1.0f);
-            this.soundMuted = false;
+    public static void unMuteSound(){
+        if(mediaPlayer != null && mediaPlayer.isPlaying()){
+            mediaPlayer.setVolume(1.0f, 1.0f);
+            soundMuted = false;
         }
     }
 
-    public boolean isSoundMuted() {
+    public static boolean isSoundMuted() {
         return soundMuted;
+    }
+
+
+    public static void toogleThemeSound(ImageButton muteSoundBtn){
+        if(isPlaying() && !isSoundMuted()){
+            muteSound();
+            muteSoundBtn.setBackgroundResource(android.R.drawable.ic_lock_silent_mode_off);
+        }else {
+            unMuteSound();
+            muteSoundBtn.setBackgroundResource(android.R.drawable.ic_lock_silent_mode);
+        }
+    }
+
+    public static void playToggleSound(Context context){
+        MediaPlayer actionSound = MediaPlayer.create(context, R.raw.jar_deny);
+        actionSound.start();
+    }
+
+    public static void playSelectPartySound(Context context){
+        MediaPlayer actionSound = MediaPlayer.create(context, R.raw.music_marimba_chord);
+        actionSound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                mp.reset();
+                mp.release();
+                mp=null;
+            }
+
+        });;
+        actionSound.start();
+    }
+
+
+    public static void playLoadingActivity(Context context){
+        MediaPlayer activitySound = MediaPlayer.create(context, R.raw.short_whoosh2);
+        activitySound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                mp.reset();
+                mp.release();
+                mp=null;
+            }
+
+        });
+        activitySound.start();
     }
 }

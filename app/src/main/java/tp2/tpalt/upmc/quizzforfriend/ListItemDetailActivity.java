@@ -34,14 +34,14 @@ public class ListItemDetailActivity extends AppCompatActivity {
         // Here we turn your string.xml in an array
         String[] myKeys = getResources().getStringArray(R.array.choix);
 
-        TextView myTextView = (TextView) findViewById(R.id.un_choix);
+        //TextView myTextView = (TextView) findViewById(R.id.un_choix);
 
         //On recupere l appli pour y mettre le theme DANS LA PARTIE EN COURS
 //        quizzy  = (QuizzForFriend)getApplication();
 //        porty = new Partie();
 //        porty.setTheme(myKeys[position]);
 //        porty   = quizzy.get
-        myTextView.setText(myKeys[position]);
+        //myTextView.setText(myKeys[position]);
 
       Toast.makeText(ListItemDetailActivity.this, "Mon JSon Parser "+loadJSONFromAsset("quiz_"+myKeys[position]), Toast.LENGTH_SHORT).show();
     }
