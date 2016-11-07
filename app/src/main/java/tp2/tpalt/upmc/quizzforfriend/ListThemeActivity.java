@@ -1,25 +1,31 @@
 package tp2.tpalt.upmc.quizzforfriend;
 
 import android.annotation.SuppressLint;
-import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.DataSetObserver;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.ImageButton;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ListView;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.ArrayList;
 
-    protected QuizzForFriend quizzForFriendApp;
+/**
+ * Created by macbookpro on 17/10/2016.
+ */
 
-    private ImageButton muteSoundBtn;
-    private AlertDialog alertDialog;
+public class ListThemeActivity extends AppCompatActivity {
 
+    private QuizzForFriend myApp;
+
+    private ArrayAdapter<ThemeList> themeListArrayAdapter;
+    private ListView listView;
 
     private final Handler mHideHandler = new Handler();
     private View mContentView;
@@ -47,62 +53,48 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-
+    private ListView listview;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_start_screen);
-        mContentView = findViewById(R.id.partyChoice);
-        getSupportActionBar().hide();
-        QuizzForFriend.playLoadingActivity(getApplicationContext());
+        setContentView(R.layout.list_theme_layout);
+        QuizzForFriend.crossFade(getApplicationContext());
 
-        //partieSolo  = (Button)findViewById(R.id.boutonSolo);
-        //partieVersus = (Button)findViewById(R.id.boutonVersus);
+        mContentView = findViewById(R.id.listdesTheme);
 
-        quizzForFriendApp = (QuizzForFriend) getApplication();
-        quizzForFriendApp.playRessource(R.raw.intro_remix);
+        //* *EDIT* *
 
-        muteSoundBtn = (ImageButton) findViewById(R.id.muteSound);
+        //Questionnaire questionnaire = new Questionnaire(getApplicationContext(),R.raw.quiz_aeronotiques);
 
-        alertDialog = new AlertDialog.Builder(MainActivity.this).create();
-        alertDialog.setTitle("Pas tout de suite !");
-        alertDialog.setMessage("La partie contre des joueurs sera disponnible dans la prochaine version");
-        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-            new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int which) {
-                    dialog.dismiss();
-                }
-            });
+        myApp = (QuizzForFriend) getApplication();
+
+        themeListArrayAdapter = new ThemeListAdapter(this, myApp.getThemeList());
+
+
+        listView = (ListView)findViewById(R.id.listTheme);
+        listView.setAdapter(themeListArrayAdapter);
+        /*listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.i("HelloListView", "You clicked Item: " + id + " at position:" + position);
+            }
+        });*/
+
     }
-
-    public void playDirection(View v){
-        if (v.getId() != R.id.boutonSolo){
-            alertDialog.show();
-        }else {
-            Intent itnt = intentForId(v);
-            startActivity(itnt);
-        }
-    }
-
-    private Intent intentForId(View v){
-        if (v.getId() == R.id.boutonSolo){
-            return new Intent (getApplicationContext(), ThemeActivity.class);}
-        else {
-            return new Intent (getApplicationContext(), ThemeActivity.class);
-        }
-    }
-
-    public void toogleSound(View v){
-        QuizzForFriend.toogleThemeSound(muteSoundBtn);
-        QuizzForFriend.playToggleSound(getBaseContext());
-    }
+    /*@Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+        Log.i("HelloListView", "You clicked Item: " + id + " at position:" + position);
+        // Then you start a new Activity via Intent
+        //Intent intent = new Intent();
+        //intent.setClass(this, ListItemDetailActivity.class);
+        //intent.putExtra("position", position);
+        // Or / And
+        //intent.putExtra("id", id);
+        //startActivity(intent);
+    }*/
 
     public void playSelectPartySound(View v){
         QuizzForFriend.playSelectPartySound(getBaseContext());
-        this.playDirection(v);
     }
 
 

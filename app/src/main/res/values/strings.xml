@@ -8,4 +8,12 @@
     <string name="VERSUS_PARTY">JOUER CONTRE UN JOUEUR</string>
     <string name="MUTE_SOUND">Muet</string>
     <string name="UNMUTE_SOUND">Son</string>
+    <string name="sound_menu_btn">Son</string>
+    <string name="choisir_theme">Choisir Theme</string>
+    <string name="theme_aleatoire">Theme Aleatoire</string>
+    <string name="available_theme">Thématique</string>
+    <string name="clic_yo_start_party">Cliquez pour commencer une partie</string>
+    <string name="clic_good_answer_Text">Touchez la bonne réponse</string>
+    <string name="part_will_start">Prêts ?</string>
+    <string name="part_will_start_desc">La partie va commencer dans quelques instant !\nVous avez une seule chance pour répondre à chaque question !</string>
 </resources>

@@ -2,6 +2,7 @@ package tp2.tpalt.upmc.quizzforfriend;
 
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -91,8 +92,13 @@ public class Question {
     }
 
 
-    public void setQuestionWithResponsesJson(JSONObject questionWithResponsesJson) {
-        this.questionWithResponsesJson = questionWithResponsesJson;
+    public void setQuestionWithResponsesJson(JSONObject _questionWithResponsesJson) {
+        this.questionWithResponsesJson = _questionWithResponsesJson;
+        try {
+            setResponsesJsonArray(questionWithResponsesJson.getJSONArray("answers"));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
 

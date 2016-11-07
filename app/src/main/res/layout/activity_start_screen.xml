@@ -1,9 +1,11 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0099cc"
-    tools:context="tp2.tpalt.upmc.quizzforfriend.MainActivity">
+    android:background="#31474e"
+    android:id="@+id/partyChoice"
+    tools:context="tp2.tpalt.upmc.quizzforfriend.MainActivity"
+    android:paddingBottom="@android:dimen/notification_large_icon_height">
 
 
     <TextView
@@ -14,30 +16,30 @@
         android:keepScreenOn="true"
         android:text="@string/dummy_content"
         android:paddingTop="100dp"
-        android:textColor="#33b5e5"
+        android:textColor="#eae5e5"
         android:textSize="50sp"
         android:textStyle="bold" />
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="right">
+        android:gravity="right"
+        tools:ignore="RtlHardcoded">
 
 
-        <Button
+        <ImageButton
             android:text="@string/MUTE_SOUND"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/muteSound"
-            android:onClick="toogleSound"/>
+            android:onClick="toogleSound"
+            android:background="@android:drawable/ic_lock_silent_mode" />
 
     </RelativeLayout>
 
-    <!-- This FrameLayout insets its children based on system windows using
-         android:fitsSystemWindows. -->
-    <FrameLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true">
+        android:gravity="bottom">
 
         <LinearLayout
             android:id="@+id/fullscreen_content_controls"
@@ -53,23 +55,25 @@
             android:divider="@drawable/empty_tall_divider">
 
             <Button
-                android:id="@+id/dummy_button2"
+                android:id="@+id/boutonSolo"
                 style="?metaButtonBarButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="@string/PARTY_SOLO" />
+                android:text="@string/PARTY_SOLO"
+                android:onClick="playSelectPartySound"/>
 
             <Button
-                android:id="@+id/dummy_button"
+                android:id="@+id/boutonVersus"
                 style="?metaButtonBarButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="@string/VERSUS_PARTY" />
+                android:text="@string/VERSUS_PARTY"
+                android:onClick="playSelectPartySound"/>
 
         </LinearLayout>
 
-    </FrameLayout>
+    </RelativeLayout>
 
-</FrameLayout>
+</RelativeLayout>

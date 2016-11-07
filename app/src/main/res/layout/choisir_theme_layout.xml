@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:background="#31474e"
+    style="?metaButtonBarStyle"
+    android:id="@+id/themeChoice">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right">
+
+
+        <ImageButton
+            android:text="@string/MUTE_SOUND"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/muteSound"
+            android:onClick="toogleSound"
+            android:background="@android:drawable/ic_lock_silent_mode" />
+
+    </RelativeLayout>
+
+    <Button
+        android:text="@string/theme_aleatoire"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?metaButtonBarButtonStyle"
+        android:id="@+id/themeAleatoire"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:onClick="themeDirection"
+        android:layout_weight="0.22" />
+
+    <Button
+        android:text="@string/choisir_theme"
+        style="?metaButtonBarButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:id="@+id/themeChoisis"
+        android:onClick="themeDirection"
+        android:layout_weight="0.22" />
+
+</LinearLayout>
