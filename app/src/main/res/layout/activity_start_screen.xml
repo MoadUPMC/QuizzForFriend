@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     android:background="#31474e"
     android:id="@+id/partyChoice"
-    tools:context="tp2.tpalt.upmc.quizzforfriend.MainActivity">
+    tools:context="tp2.tpalt.upmc.quizzforfriend.MainActivity"
+    android:paddingBottom="@android:dimen/notification_large_icon_height">
 
 
     <TextView
@@ -21,7 +22,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="right">
+        android:gravity="right"
+        tools:ignore="RtlHardcoded">
 
 
         <ImageButton

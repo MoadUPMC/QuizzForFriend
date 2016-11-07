@@ -3,6 +3,7 @@ package tp2.tpalt.upmc.quizzforfriend;
 
 
 import android.content.Context;
+import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,6 +32,7 @@ public class Questionnaire {
     private String description;
 
     public Questionnaire(Context appContext, int quizName) {
+        questionList = new ArrayList<Question>();
         context = appContext;
         try {
             loadFromRessource(quizName);
@@ -117,8 +119,9 @@ public class Questionnaire {
         try {
             jsonObject = new JSONObject(jsonContent);
             JSONArray questionsArray = jsonObject.getJSONArray("questions");
+            setTheme(jsonObject.get("name").toString());
+            setDescription(jsonObject.get("description").toString());
 
-            HashMap<String, String> m_li;
 
             for (int i = 0; i < questionsArray.length(); i++) {
 
@@ -140,11 +143,28 @@ public class Questionnaire {
                 questionList.add(theQuestion);
             }
         } catch (JSONException e) {
+            Log.d("exeption", "Arf", e);
             e.printStackTrace();
         }
     }
 
     public ArrayList<Question> getQuestionList() {
         return questionList;
+    }
+
+    public String getTheme() {
+        return theme;
+    }
+
+    public void setTheme(String theme) {
+        this.theme = theme;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

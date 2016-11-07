@@ -14,6 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Quiz">
         <activity
+            android:clearTaskOnLaunch="true"
             android:name=".MainActivity"
             android:uiOptions="splitActionBarWhenNarrow"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -27,7 +28,7 @@
         <activity android:name=".ThemeActivity" android:uiOptions="splitActionBarWhenNarrow"/>
         <activity android:name=".QuizzActivity" android:uiOptions="splitActionBarWhenNarrow"/>
         <activity android:name=".ListThemeActivity" android:uiOptions="splitActionBarWhenNarrow"/>
-        <activity android:name=".ListItemDetailActivity" android:uiOptions="splitActionBarWhenNarrow"/>
+        <activity android:name=".ListItemDetailActivity" android:uiOptions="splitActionBarWhenNarrow" android:clearTaskOnLaunch="true"/>
 
         <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->

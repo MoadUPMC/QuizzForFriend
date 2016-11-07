@@ -4,7 +4,10 @@
     android:orientation="horizontal"
     android:background="#31474e"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:id="@+id/lineOfMyTheme">
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -28,10 +31,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/themeTitle"
             android:layout_weight="1"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textStyle="normal|bold"
-            android:textColor="#FFF"
-            android:fontFamily="sans-serif" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:textSize="18sp" />
 
         <TextView
             android:text="TextView"
@@ -39,7 +40,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/themeDescription"
             android:layout_weight="1"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"
+            android:textStyle="normal|italic"
+            android:textSize="18sp" />
     </LinearLayout>
 
 </LinearLayout>

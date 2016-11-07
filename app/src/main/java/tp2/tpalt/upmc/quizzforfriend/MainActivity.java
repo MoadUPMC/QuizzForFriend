@@ -76,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
                     dialog.dismiss();
                 }
             });
-        Questionnaire questionnaire = new Questionnaire(getApplicationContext(),R.raw.quiz_aeronotiques);
     }
 
     public void playDirection(View v){

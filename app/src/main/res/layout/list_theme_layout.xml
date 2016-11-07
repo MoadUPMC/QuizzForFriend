@@ -1,16 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#31474e"
     android:id="@+id/listdesTheme">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:background="@android:color/holo_blue_dark">
+        <ImageButton
+            android:text="@string/MUTE_SOUND"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/muteSound"
+            android:onClick="toogleSound"
+            android:background="@android:drawable/ic_lock_silent_mode" />
+    </RelativeLayout>
+
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView2"
-        tools:text="@string/available_theme"
+        android:text="@string/available_theme"
         android:textColor="#FFFFFF"
         android:textSize="56sp"
         android:textAlignment="center"
@@ -24,7 +37,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView3"
-        tools:text="@string/clic_yo_start_party"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:padding="@dimen/activity_vertical_margin" />
 
@@ -32,6 +44,5 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/listTheme"
-        android:clickable="true"
-        android:entries="@array/choix"/>
+        android:clickable="true"/>
 </LinearLayout>

@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:weightSum="1"
     android:background="#31474e"
+    style="?metaButtonBarStyle"
     android:id="@+id/themeChoice">
 
     <RelativeLayout
@@ -26,6 +27,7 @@
         android:text="@string/theme_aleatoire"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        style="?metaButtonBarButtonStyle"
         android:id="@+id/themeAleatoire"
         android:layout_marginTop="@dimen/activity_horizontal_margin"
         android:onClick="themeDirection"
