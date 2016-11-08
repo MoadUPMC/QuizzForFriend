@@ -91,11 +91,11 @@
             android:background="@android:color/holo_blue_dark">
             <ImageButton
                 android:text="@string/MUTE_SOUND"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="54dp"
+                android:layout_height="64dp"
                 android:id="@+id/muteSound2"
                 android:onClick="toogleSound"
-                android:background="@android:drawable/ic_lock_silent_mode" />
+                android:background="@drawable/enable_sound" />
         </RelativeLayout>
 
 
@@ -121,78 +121,82 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:padding="@dimen/activity_vertical_margin" />
 
-        <LinearLayout
+
+
+
+        <RelativeLayout
             android:id="@+id/answlay"
             android:visibility="gone"
-            android:background="@drawable/border_background"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-
-            >
-            <LinearLayout
-                android:background="@drawable/border_background"
-                android:layout_weight="1"
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:background="@drawable/border_background"
-                    android:layout_weight="0.5"
-                    android:text="..."
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:id="@+id/response1OverView"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse"
-                    android:textAlignment="center"
-                    android:gravity="center_vertical|center_horizontal|center" />
-
-                <TextView
-                    android:background="@drawable/border_background"
-                    android:layout_weight="0.5"
-                    android:text="..."
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:id="@+id/response2OverView"
-                    android:textAlignment="center"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse"
-                    android:gravity="center_vertical|center_horizontal|center"  />
-            </LinearLayout>
+            android:gravity="bottom">
 
             <LinearLayout
-                android:layout_weight="1"
-                android:background="@drawable/border_background"
+                android:id="@+id/fullscreen_content_controls"
+                style="?metaButtonBarStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_gravity="bottom|center_horizontal"
+                android:background="@color/black_overlay"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:orientation="vertical"
+                android:showDividers="middle"
+                android:divider="@drawable/empty_tall_divider">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/response1OverView"
+                        style="?metaButtonBarButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:text="..."
+                        android:onClick="makeAchoice"
+                        android:drawableLeft="@drawable/racingflags" />
 
-                <TextView
-                    android:background="@drawable/border_background"
-                    android:layout_weight="1"
-                    android:text="..."
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:id="@+id/response3OverView"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse"
-                    android:textAlignment="center"
-                    android:gravity="center_vertical|center_horizontal|center" />
+                    <Button
+                        android:id="@+id/response2OverView"
+                        style="?metaButtonBarButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:text="..."
+                        android:onClick="makeAchoice"
+                        android:drawableLeft="@drawable/racingflags" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/response3OverView"
+                        style="?metaButtonBarButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
 
-                <TextView
-                    android:background="@drawable/border_background"
-                    android:layout_weight="1"
-                    android:text="..."
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:id="@+id/response4OverView"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse"
-                    android:textAlignment="center"
-                    android:gravity="center_vertical|center_horizontal|center" />
+                        android:layout_weight="0.5"
+                        android:text=" "
+                        android:onClick="makeAchoice"
+                        android:drawableLeft="@drawable/racingflags" />
+
+                    <Button
+                        android:id="@+id/response4OverView"
+                        style="?metaButtonBarButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:layout_weight="0.5"
+                        android:text=" "
+                        android:onClick="makeAchoice"
+                        android:drawableLeft="@drawable/racingflags" />
+                </LinearLayout>
+
             </LinearLayout>
 
-
-        </LinearLayout>
-
+        </RelativeLayout>
 
     </LinearLayout>
 </RelativeLayout>

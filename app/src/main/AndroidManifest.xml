@@ -25,10 +25,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ThemeActivity" android:uiOptions="splitActionBarWhenNarrow"/>
-        <activity android:name=".QuizzActivity" android:uiOptions="splitActionBarWhenNarrow"/>
-        <activity android:name=".ListThemeActivity" android:uiOptions="splitActionBarWhenNarrow"/>
-        <activity android:name=".ListItemDetailActivity" android:uiOptions="splitActionBarWhenNarrow" android:clearTaskOnLaunch="true"/>
+        <activity android:name=".ThemeActivity"
+            android:theme="@style/FullscreenTheme"
+            android:uiOptions="splitActionBarWhenNarrow"/>
+        <activity android:name=".QuizzActivity"
+            android:theme="@style/FullscreenTheme"
+            android:uiOptions="splitActionBarWhenNarrow"
+            android:clearTaskOnLaunch="true"/>
+        <activity android:name=".ListThemeActivity"
+            android:theme="@style/FullscreenTheme"
+            android:uiOptions="splitActionBarWhenNarrow"/>
+        <activity android:name=".ListItemDetailActivity"
+            android:theme="@style/FullscreenTheme"
+            android:uiOptions="splitActionBarWhenNarrow" android:clearTaskOnLaunch="true"/>
+        <activity android:name=".DisplayResultActivity"
+            android:theme="@style/FullscreenTheme"
+            android:uiOptions="splitActionBarWhenNarrow" android:clearTaskOnLaunch="true"/>
 
         <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->

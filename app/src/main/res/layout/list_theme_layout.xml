@@ -2,20 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#31474e"
     android:id="@+id/listdesTheme">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="right"
-        android:background="@android:color/holo_blue_dark">
+        android:background="#3c8c7b">
         <ImageButton
             android:text="@string/MUTE_SOUND"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="54dp"
+            android:layout_height="64dp"
             android:id="@+id/muteSound"
             android:onClick="toogleSound"
-            android:background="@android:drawable/ic_lock_silent_mode" />
+            android:background="@drawable/enable_sound" />
     </RelativeLayout>
 
 
@@ -30,9 +29,10 @@
         android:textStyle="normal|bold"
         android:paddingTop="@android:dimen/notification_large_icon_height"
         android:paddingBottom="@android:dimen/notification_large_icon_height"
-        android:background="@android:color/holo_blue_dark" />
+        android:background="#3c8c7b" />
 
     <TextView
+        android:background="#14463b"
         android:text="@string/clic_yo_start_party"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

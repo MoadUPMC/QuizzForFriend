@@ -23,6 +23,7 @@ import java.util.List;
 public class QuizzForFriend extends Application {
 
     private static Context mContext;
+    public static String gameMode;
 
     public static Context getContext() {
         return mContext;
@@ -147,10 +148,10 @@ public class QuizzForFriend extends Application {
     public static void toogleThemeSound(ImageButton muteSoundBtn){
         if(isPlaying() && !isSoundMuted()){
             muteSound();
-            muteSoundBtn.setBackgroundResource(android.R.drawable.ic_lock_silent_mode_off);
+            muteSoundBtn.setBackgroundResource(R.drawable.disablesound);
         }else {
             unMuteSound();
-            muteSoundBtn.setBackgroundResource(android.R.drawable.ic_lock_silent_mode);
+            muteSoundBtn.setBackgroundResource(R.drawable.enable_sound);
         }
     }
 
@@ -204,6 +205,38 @@ public class QuizzForFriend extends Application {
 
         });
         activitySound.start();
+    }
+
+
+
+    public static void playGoodAnswerSound(Context context){
+        MediaPlayer activitySound = MediaPlayer.create(context, R.raw.xylophone_affirm);
+        activitySound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                mp.reset();
+                mp.release();
+                mp=null;
+            }
+
+        });
+        activitySound.start();
+    }
+
+    public static void playBadAnswer(Context context){
+        MediaPlayer actionSound = MediaPlayer.create(context, R.raw.jar_deny);
+        actionSound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                mp.reset();
+                mp.release();
+                mp=null;
+            }
+
+        });
+        actionSound.start();
     }
 
     public List<ThemeList> getThemeList() {

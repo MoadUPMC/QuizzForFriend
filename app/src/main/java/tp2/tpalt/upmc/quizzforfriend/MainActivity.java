@@ -11,7 +11,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
 
     private ImageButton muteSoundBtn;
     private AlertDialog alertDialog;
+    Animation animationInfinitBounce,outAnimationInfinitBounce;
+
+    private ImageView readeaySteadyGo;
 
 
     private final Handler mHideHandler = new Handler();
@@ -67,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
         muteSoundBtn = (ImageButton) findViewById(R.id.muteSound);
 
-        alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+        alertDialog = new AlertDialog.Builder(MainActivity.this, R.style.MyAlertDialogStyle).create();
         alertDialog.setTitle("Pas tout de suite !");
         alertDialog.setMessage("La partie contre des joueurs sera disponnible dans la prochaine version");
         alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
@@ -76,6 +83,49 @@ public class MainActivity extends AppCompatActivity {
                     dialog.dismiss();
                 }
             });
+        readeaySteadyGo = (ImageView) findViewById(R.id.logoBounce);
+        animationInfinitBounce = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.infinite_bounce);
+        outAnimationInfinitBounce = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.bounceout);
+
+        animationInfinitBounce.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                //Todo
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                if(animation == animationInfinitBounce){
+                    readeaySteadyGo.startAnimation(outAnimationInfinitBounce);
+                }
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                // TODO
+            }
+        });
+
+        outAnimationInfinitBounce.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                //Todo
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                if(animation == outAnimationInfinitBounce){
+                    readeaySteadyGo.startAnimation(animationInfinitBounce);
+                }
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                // TODO
+            }
+        });
+
+        readeaySteadyGo.startAnimation(animationInfinitBounce);
     }
 
     public void playDirection(View v){

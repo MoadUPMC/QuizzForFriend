@@ -7,12 +7,18 @@ import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -23,8 +29,10 @@ public class ListItemDetailActivity extends AppCompatActivity{
     Partie party;
 
     private ImageButton muteSoundBtn;
-    private LinearLayout readeaySteadyGo, answlay;
-    private TextView questionOverView, tfgans, response1OverView,response2OverView,response3OverView,response4OverView;
+    private LinearLayout readeaySteadyGo;
+    private RelativeLayout answlay;
+    private TextView questionOverView, tfgans;
+    private Button response1OverView,response2OverView,response3OverView,response4OverView;
     Animation animationSlideUp;
     TextView decompte, theme;
     Question q;
@@ -69,15 +77,15 @@ public class ListItemDetailActivity extends AppCompatActivity{
         theme = (TextView)  findViewById(R.id.theme);
 
 
-        answlay = (LinearLayout) findViewById(R.id.answlay);
+        answlay = (RelativeLayout) findViewById(R.id.answlay);
         tfgans = (TextView) findViewById(R.id.tfgans);
 
         questionOverView = (TextView) findViewById(R.id.questionOverView);
 
-        response1OverView = (TextView) findViewById(R.id.response1OverView);
-        response2OverView = (TextView) findViewById(R.id.response2OverView);
-        response3OverView = (TextView) findViewById(R.id.response3OverView);
-        response4OverView = (TextView) findViewById(R.id.response4OverView);
+        response1OverView = (Button) findViewById(R.id.response1OverView);
+        response2OverView = (Button) findViewById(R.id.response2OverView);
+        response3OverView = (Button) findViewById(R.id.response3OverView);
+        response4OverView = (Button) findViewById(R.id.response4OverView);
 
         Intent intent = getIntent();
         int position = intent.getIntExtra("position", 0);
@@ -122,6 +130,7 @@ public class ListItemDetailActivity extends AppCompatActivity{
                     response3OverView.setVisibility(View.VISIBLE);
                     response4OverView.setVisibility(View.VISIBLE);
                     answlay.setVisibility(View.VISIBLE);
+                    tfgans.setVisibility(View.VISIBLE);
                     showQuestion();
                 }
             }
@@ -131,7 +140,7 @@ public class ListItemDetailActivity extends AppCompatActivity{
                 // TODO
             }
         });
-        new CountDownTimer(10000, 1000) {
+        new CountDownTimer(5000, 1000) {
 
             public void onTick(long millisUntilFinished) {
                 decompte.setText("On commence dans "+millisUntilFinished / 1000+" Secondes :)");
@@ -203,7 +212,36 @@ public class ListItemDetailActivity extends AppCompatActivity{
         moveTaskToBack(false);
     }
 
-    public void makeAchice(View v){
+    public void makeAchoice(View v){
+        if(party.isFinish()) {
+            Intent itnt = new Intent (getApplicationContext(), DisplayResultActivity.class);
+            itnt.putExtra("nbBonnerep", party.getNbBonneReponse());
+            itnt.putExtra("nbRep", party.getNbReponse());
+            startActivity(itnt);
+            return;
+        }else {
+            LayoutInflater inflater = getLayoutInflater();
+            View layout;
+            Button b = (Button)v;
+            String resp = b.getText().toString();
+            if (party.bonneReponse(resp)){
+                QuizzForFriend.playGoodAnswerSound(getApplicationContext());
+                layout = inflater.inflate(R.layout.bonneresponse_toast,
+                        (ViewGroup) findViewById(R.id.custom_toast_layout_id));
+            }else {
+                QuizzForFriend.playBadAnswer(getApplicationContext());
+                layout = inflater.inflate(R.layout.badresponse_toast,
+                        (ViewGroup) findViewById(R.id.custom_toast_layout_id2));
+            }
+
+            // Toast...
+            Toast toast = new Toast(getApplicationContext());
+            toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+            toast.setDuration(Toast.LENGTH_SHORT);
+            toast.setView(layout);
+            toast.show();
+            showQuestion();
+        }
 
     }
 
@@ -211,6 +249,11 @@ public class ListItemDetailActivity extends AppCompatActivity{
         q = party.getNexQuestion();
         questionOverView.setText(q.getQuestion());
         JSONArray responses = q.getResponsesJsonArray();
+        if(responses == null){
+            Intent itnt = new Intent (getApplicationContext(), DisplayResultActivity.class);
+            startActivity(itnt);
+            return;
+        }
         for (int u = 0; u < responses.length(); u++) {
             switch(u) {
                 case 0 :

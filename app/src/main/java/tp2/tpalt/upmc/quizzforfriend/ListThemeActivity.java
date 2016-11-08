@@ -94,7 +94,7 @@ public class ListThemeActivity extends AppCompatActivity {
     }*/
 
     public void playSelectPartySound(View v){
-        QuizzForFriend.playSelectPartySound(getBaseContext());
+        QuizzForFriend.playSelectTheme(getBaseContext());
     }
 
 

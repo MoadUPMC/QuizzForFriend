@@ -1,24 +1,24 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#31474e"
     android:id="@+id/partyChoice"
     tools:context="tp2.tpalt.upmc.quizzforfriend.MainActivity"
-    android:paddingBottom="@android:dimen/notification_large_icon_height">
+    android:paddingBottom="20dp"
+    android:background="#3c8c7b"
+    >
 
 
-    <TextView
-        android:id="@+id/fullscreen_content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_horizontal"
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        app:srcCompat="@drawable/logo_transparent"
         android:keepScreenOn="true"
-        android:text="@string/dummy_content"
-        android:paddingTop="100dp"
-        android:textColor="#eae5e5"
-        android:textSize="50sp"
-        android:textStyle="bold" />
+        android:id="@+id/logoBounce"
+        android:paddingBottom="228dp" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,11 +28,11 @@
 
         <ImageButton
             android:text="@string/MUTE_SOUND"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="54dp"
+            android:layout_height="64dp"
             android:id="@+id/muteSound"
             android:onClick="toogleSound"
-            android:background="@android:drawable/ic_lock_silent_mode" />
+            android:background="@drawable/enable_sound" />
 
     </RelativeLayout>
 
@@ -54,6 +54,7 @@
             android:showDividers="middle"
             android:divider="@drawable/empty_tall_divider">
 
+
             <Button
                 android:id="@+id/boutonSolo"
                 style="?metaButtonBarButtonStyle"
@@ -61,7 +62,8 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:text="@string/PARTY_SOLO"
-                android:onClick="playSelectPartySound"/>
+                android:onClick="playSelectPartySound"
+                android:drawableLeft="@drawable/gamecontroller" />
 
             <Button
                 android:id="@+id/boutonVersus"
@@ -70,7 +72,8 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:text="@string/VERSUS_PARTY"
-                android:onClick="playSelectPartySound"/>
+                android:onClick="playSelectPartySound"
+                android:drawableLeft="@drawable/trophy" />
 
         </LinearLayout>
 

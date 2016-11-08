@@ -2,17 +2,22 @@ package tp2.tpalt.upmc.quizzforfriend;
 
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+
+import java.util.Random;
 
 
 /**
@@ -74,17 +79,70 @@ public class ThemeActivity extends AppCompatActivity {
 
     //On redirige en fonction du bouton sur lequel on appuie
     public void themeDirection(View v){
-        QuizzForFriend.playSelectPartySound(getApplicationContext());
-        startActivity(intentForId(v));
+        QuizzForFriend.playSelectTheme(getApplicationContext());
+        final View currentView = v;
+        AlertDialog.Builder builderSingle = new AlertDialog.Builder(ThemeActivity.this, R.style.MyAlertDialogStyle);
+        //builderSingle.setIcon(R.drawable.);
+        builderSingle.setTitle("Quel type de partie ?");
+        //builderSingle.setTI
+
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
+                ThemeActivity.this,
+                android.R.layout.select_dialog_singlechoice);
+        arrayAdapter.add("Contre la montre");
+        arrayAdapter.add("Normal");
+
+        builderSingle.setNegativeButton(
+                "Annuler",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        QuizzForFriend.playSelectPartySound(getApplicationContext());
+                    }
+                });
+
+        builderSingle.setAdapter(
+                arrayAdapter,
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        QuizzForFriend.playSelectPartySound(getApplicationContext());
+                        String strName = arrayAdapter.getItem(which);
+                        AlertDialog.Builder builderInner = new AlertDialog.Builder(ThemeActivity.this , R.style.MyAlertDialogStyle);
+                        builderInner.setMessage(strName);
+                        QuizzForFriend.gameMode = strName;
+                        builderInner.setTitle("Vous avez choisis le mode :");
+                        builderInner.setPositiveButton(
+                                "Ok",
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(
+                                            DialogInterface dialog,
+                                            int which) {
+                                        dialog.dismiss();
+                                        QuizzForFriend.playSelectPartySound(getApplicationContext());
+                                        startActivity(intentForId(currentView));
+                                    }
+                                });
+                        builderInner.show();
+                    }
+                });
+        builderSingle.show();
     }
 
     private Intent intentForId(View v){
+        Intent intent;
         if (v.getId() == R.id.themeChoisis){
-            return new Intent(this, ListThemeActivity.class);}
+            intent = new Intent(this, ListThemeActivity.class);}
         else {
-            //On passe un theme a l'application au hasard ici
-            return new Intent (this, QuizzActivity.class);
+            Random random = new Random();
+            int position = random.nextInt(QuizzForFriend.quizes.length - 0);
+            intent = new Intent();
+            intent.setClass(this, ListItemDetailActivity.class);
+            intent.putExtra("position", position);
         }
+        return intent;
     }
 
 

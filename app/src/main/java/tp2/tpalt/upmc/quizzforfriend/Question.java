@@ -1,6 +1,8 @@
 package tp2.tpalt.upmc.quizzforfriend;
 
 
+import android.util.Log;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -103,8 +105,18 @@ public class Question {
 
 
     public boolean isBonneReponse(String response){
-        //TODO
-        return true;
+        Log.i("TOTO", "IF rsp >" + response);
+
+        Boolean isGood = false;
+        for (int i = 0; i < this.responsesJsonArray.length(); i++) {
+            try {
+                if (response.toString() == this.responsesJsonArray.getJSONObject(i).get("name").toString()
+                        && this.responsesJsonArray.getJSONObject(i).getInt("weight") == 1) isGood=true;
+            } catch (JSONException e) {
+                //e.printStackTrace();
+            }
+        }
+        return isGood;
     }
 
 }

@@ -9,12 +9,15 @@ public class Partie {
     private Questionnaire questions;
     private Joker joker;
     private String theme;
-    int nbReponse, nbBonneReponse, currentRp;
+    public int nbReponse, nbBonneReponse, currentRp;
     private ArrayList<Question> questionList;
+    public boolean finished =false;
 
 
     public Partie(Questionnaire q){
         currentRp = 0;
+        nbReponse = 0;
+        nbBonneReponse = 0;
         this.questions = q;
         //TODO
         joker = Joker.getInstance();
@@ -38,7 +41,9 @@ public class Partie {
         Question q;
         if (currentRp < questionList.size()) {
             q = questionList.get(currentRp);
+            nbReponse++;
         }else {
+            finished = true;
             q = new Question();
         }
         currentRp++;
@@ -70,4 +75,18 @@ public class Partie {
     public void setNbReponse(int nbReponse) {
         this.nbReponse = nbReponse;
     }
+
+    public boolean bonneReponse(String resp) {
+        if (currentRp >= questionList.size()) return false;
+        Question q = questionList.get(currentRp-1);
+        Boolean b = q.isBonneReponse(resp);
+        if(b == true) nbBonneReponse++;
+        return b;
+    }
+
+    public boolean isFinish() {
+        return finished;
+    }
+
+
 }
