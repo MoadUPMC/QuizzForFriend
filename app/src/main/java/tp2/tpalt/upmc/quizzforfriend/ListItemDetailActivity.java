@@ -38,6 +38,10 @@ public class ListItemDetailActivity extends AppCompatActivity{
     Question q;
 
 
+    // Toast...
+    Toast toast;
+
+
     private final Handler mHideHandler = new Handler();
     private View mContentView;
     private final Runnable mHidePart2Runnable = new Runnable() {
@@ -86,6 +90,11 @@ public class ListItemDetailActivity extends AppCompatActivity{
         response2OverView = (Button) findViewById(R.id.response2OverView);
         response3OverView = (Button) findViewById(R.id.response3OverView);
         response4OverView = (Button) findViewById(R.id.response4OverView);
+
+
+
+        // Toast...
+        toast = new Toast(getApplicationContext());
 
         Intent intent = getIntent();
         int position = intent.getIntExtra("position", 0);
@@ -233,9 +242,6 @@ public class ListItemDetailActivity extends AppCompatActivity{
                 layout = inflater.inflate(R.layout.badresponse_toast,
                         (ViewGroup) findViewById(R.id.custom_toast_layout_id2));
             }
-
-            // Toast...
-            Toast toast = new Toast(getApplicationContext());
             toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
             toast.setDuration(Toast.LENGTH_SHORT);
             toast.setView(layout);
@@ -251,6 +257,8 @@ public class ListItemDetailActivity extends AppCompatActivity{
         JSONArray responses = q.getResponsesJsonArray();
         if(responses == null){
             Intent itnt = new Intent (getApplicationContext(), DisplayResultActivity.class);
+            itnt.putExtra("nbBonnerep", party.getNbBonneReponse());
+            itnt.putExtra("nbRep", party.getNbReponse());
             startActivity(itnt);
             return;
         }

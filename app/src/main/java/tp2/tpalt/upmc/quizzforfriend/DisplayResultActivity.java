@@ -104,7 +104,7 @@ public class DisplayResultActivity extends AppCompatActivity {
     }
 
     public void backToHome(View v){
-        QuizzForFriend.crossFade(getApplicationContext(),R.raw.quizmania__disco);
+        //QuizzForFriend.crossFade(getApplicationContext(),R.raw.quizmania__disco);
         Intent itnt = new Intent (getApplicationContext(), MainActivity.class);
         startActivity(itnt);
     }

@@ -7,34 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26969944-6c4f-4c52-be2a-67d98c3730b6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/arrow_down.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/arrow_up.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/brush_pencil.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/tp2/tpalt/upmc/quizzforfriend/DisplayResultActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/anim/bounce_up.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/anim/bounceout.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/anim/infinite_bounce.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/anim/shake_t.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/partie_solo_drawable_left.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_result_screen.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/badresponse_toast.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/bonneresponse_toast.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/tp2/tpalt/upmc/quizzforfriend/DisplayResultActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/tp2/tpalt/upmc/quizzforfriend/DisplayResultActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/tp2/tpalt/upmc/quizzforfriend/ListItemDetailActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/tp2/tpalt/upmc/quizzforfriend/ListItemDetailActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/tp2/tpalt/upmc/quizzforfriend/ListThemeActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/tp2/tpalt/upmc/quizzforfriend/ListThemeActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/tp2/tpalt/upmc/quizzforfriend/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/tp2/tpalt/upmc/quizzforfriend/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/tp2/tpalt/upmc/quizzforfriend/Partie.java" afterPath="$PROJECT_DIR$/app/src/main/java/tp2/tpalt/upmc/quizzforfriend/Partie.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/tp2/tpalt/upmc/quizzforfriend/Question.java" afterPath="$PROJECT_DIR$/app/src/main/java/tp2/tpalt/upmc/quizzforfriend/Question.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/tp2/tpalt/upmc/quizzforfriend/QuizzForFriend.java" afterPath="$PROJECT_DIR$/app/src/main/java/tp2/tpalt/upmc/quizzforfriend/QuizzForFriend.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/tp2/tpalt/upmc/quizzforfriend/ThemeActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/tp2/tpalt/upmc/quizzforfriend/ThemeActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_start_screen.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_start_screen.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/choisir_theme_layout.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/choisir_theme_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_item_layout.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_item_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_theme_layout.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_theme_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/party_layout.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/party_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
     </list>
     <ignored path="QuizzForFriend.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -104,11 +79,21 @@
       <file leaf-file-name="ListItemDetailActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/tp2/tpalt/upmc/quizzforfriend/ListItemDetailActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="218" column="32" selection-start-line="218" selection-start-column="27" selection-end-line="218" selection-end-column="32" />
+            <state relative-caret-position="43">
+              <caret line="223" column="36" selection-start-line="223" selection-start-column="36" selection-end-line="223" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Toast.java" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-24/android/widget/Toast.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="68" column="25" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="25" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -163,8 +148,8 @@
       <file leaf-file-name="DisplayResultActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/tp2/tpalt/upmc/quizzforfriend/DisplayResultActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="115" column="43" selection-start-line="115" selection-start-column="32" selection-end-line="115" selection-end-column="43" />
+            <state relative-caret-position="401">
+              <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1975,12 +1960,12 @@
         <option value="$PROJECT_DIR$/app/src/main/java/tp2/tpalt/upmc/quizzforfriend/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/tp2/tpalt/upmc/quizzforfriend/Question.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/tp2/tpalt/upmc/quizzforfriend/ThemeActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/tp2/tpalt/upmc/quizzforfriend/ListItemDetailActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/anim/infinite_bounce.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/anim/shake_t.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_result_screen.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/tp2/tpalt/upmc/quizzforfriend/DisplayResultActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/tp2/tpalt/upmc/quizzforfriend/Partie.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/tp2/tpalt/upmc/quizzforfriend/ListItemDetailActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/tp2/tpalt/upmc/quizzforfriend/DisplayResultActivity.java" />
       </list>
     </option>
   </component>
@@ -2596,13 +2581,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/tp2/tpalt/upmc/quizzforfriend/QuizListAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="55" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/tp2/tpalt/upmc/quizzforfriend/ThemeList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -2891,8 +2869,8 @@
         <state relative-caret-position="-874">
           <caret line="239" column="5" selection-start-line="239" selection-start-column="5" selection-end-line="239" selection-end-column="5" />
           <folding>
-            <element signature="e#5643#5869#0" expanded="true" />
-            <element signature="e#5868#5869#0" expanded="true" />
+            <element signature="e#5643#5869#0" expanded="false" />
+            <element signature="e#5868#5869#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2984,16 +2962,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/tp2/tpalt/upmc/quizzforfriend/ListItemDetailActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="218" column="32" selection-start-line="218" selection-start-column="27" selection-end-line="218" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_result_screen.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -3018,10 +2986,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-24/android/widget/Toast.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="68" column="25" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/tp2/tpalt/upmc/quizzforfriend/ListItemDetailActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="223" column="36" selection-start-line="223" selection-start-column="36" selection-end-line="223" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/tp2/tpalt/upmc/quizzforfriend/DisplayResultActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="115" column="43" selection-start-line="115" selection-start-column="32" selection-end-line="115" selection-end-column="43" />
+        <state relative-caret-position="401">
+          <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
